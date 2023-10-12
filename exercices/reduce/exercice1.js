@@ -6,7 +6,7 @@ import {
 //Turn an array of numbers into a total of all the numbers
 export const total = arr => {
     // your code here
-
+    return arr.reduce((a, b) => a + b)
 }
 
 //console.log(total([1, 2, 3])); // 6
@@ -14,22 +14,32 @@ export const total = arr => {
 // Turn an array of numbers into a long string of all those numbers.
 export const stringConcat = arr => {
     // your code here 
-
+    return arr.reduce((a, b) => a.toString() + b.toString())
 }
 
 //console.log(stringConcat([1, 2, 3])); // "123"
 
 //Turn an array of voter objects into a count of how many people voted
-export const totalVotes = arr => {
+export const totalVotes = arr =>
     // your code here    
+    arr.reduce((count, voter) => {
+        if (voter.voted) {
+            return count + 1;
+        } else {
+            return count;
+        }
+    }, 0)
 
-}
+
 //console.log(totalVotes(voters)); // 7
 
 //Given an array of all your wishlist items, figure out how much it would cost to just buy everything at once
 
 export const shoppingSpree = arr => {
     // your code here
+    return arr.reduce((price, wishlist) => {
+        return price += wishlist.price
+    }, 0)
 }
 
 // import wishlist
@@ -46,7 +56,34 @@ The resulting object containing this data should have 6 properties. See the exam
 
 export const voterResults = arr => {
     // your code here
-
+    return arr.reduce(
+        (acc, voter) => {
+            if (voter.age >= 18 && voter.age <= 25) {
+                acc.numYoungPeople += 1;
+                if (voter.voted) {
+                    acc.numYoungVotes += 1;
+                }
+            } else if (voter.age >= 26 && voter.age <= 35) {
+                acc.numMidsPeople += 1;
+                if (voter.voted) {
+                    acc.numMidVotesPeople += 1;
+                }
+            } else if (voter.age >= 36 && voter.age <= 55) {
+                acc.numOldsPeople += 1;
+                if (voter.voted) {
+                    acc.numOldVotesPeople += 1;
+                }
+            }
+            return acc;
+        }, {
+            numYoungVotes: 0,
+            numYoungPeople: 0,
+            numMidVotesPeople: 0,
+            numMidsPeople: 0,
+            numOldVotesPeople: 0,
+            numOldsPeople: 0,
+        }
+    );
 }
 
 // import voters
