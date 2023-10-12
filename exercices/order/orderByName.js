@@ -1,4 +1,8 @@
 const orderByName = users => {
-    // your code here
+    return users.sort(
+        (a, b) => {
+            return a.name.localeCompare(b.name)
+        }
+    )
 }
 export default orderByName;
