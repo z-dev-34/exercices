@@ -1,10 +1,10 @@
 import {
     filterByAge,
     filterOnlyVoted
-} from "../arrays/filter/filters";
+} from "../exercices/filter/filters";
 import {
     voters
-} from '../arrays/filter/data.js';
+} from '../exercices/filter/data.js';
 
 const outputFilterByAge = [{
         name: 'Sam',

@@ -99,16 +99,10 @@ describe('sort users', () => {
     })
     it('sort by date DESC', () => {
         const expectedOutput = [{
-                id: 1,
-                name: 'Alice',
-                age: 36,
-                date: '2011-10-10'
-            },
-            {
-                id: 2,
-                name: 'Eve',
-                age: 28,
-                date: '2020-01-10'
+                id: 4,
+                name: 'Amal',
+                age: 23,
+                date: '2023-04-03'
             },
             {
                 id: 3,
@@ -117,12 +111,18 @@ describe('sort users', () => {
                 date: '2020-02-10'
             },
             {
-                id: 4,
-                name: 'Amal',
-                age: 23,
-                date: '2023-04-03'
+                id: 2,
+                name: 'Eve',
+                age: 28,
+                date: '2020-01-10'
+            },
+            {
+                id: 1,
+                name: 'Alice',
+                age: 36,
+                date: '2011-10-10'
             }
-        ];
+        ]
         const result = orderbyDateDesc(users);
         expect(result).toEqual(expectedOutput)
     })
