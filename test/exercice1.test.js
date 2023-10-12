@@ -4,11 +4,11 @@ import {
     totalVotes,
     shoppingSpree,
     voterResults
-} from "../exercices/exercice1.js";
+} from "../exercices/reduce/exercice1.js";
 import {
     voters,
     wishlist
-} from '../exercices/data.js'
+} from '../exercices/reduce/data.js'
 describe('test exercie 1', () => {
     it('Turn an array of numbers into a total of all the numbers', () => {
         const result = total([1, 2, 3]);
