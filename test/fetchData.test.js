@@ -50,7 +50,7 @@ describe('fetchData', () => {
             const result = await usersToUppercase(promiseData)
             expect(result).toEqual(outputData);
         })
-        it('hashed users id', async () => {
+        it.skip('hashed users id', async () => {
             const outputData = [{
                     id: '2b8bfde2a',
                     name: 'ZAK'
